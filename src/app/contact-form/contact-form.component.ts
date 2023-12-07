@@ -43,9 +43,9 @@ export class ContactFormComponent implements OnInit {
         .subscribe({
           next: () => {
             this.contactForm.reset();
-            alert('Дякуємо за ваш відгук!');
+            alert('Ďakujeme za vašu spätnú väzbu!');
           },
-          error: (error) => alert('Сталася якась помилка. Спробуйте знову.'),
+          error: (error) => alert('Došlo k chybe. Skúste to prosím znova.'),
         });
 
       console.log(this.contactForm.value.name);

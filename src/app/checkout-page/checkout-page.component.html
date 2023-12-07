@@ -109,7 +109,7 @@
         <span class="name"> {{ pizza.name }} </span>
         <span class="price">
           <span *ngIf="pizza.quantity > 1">{{ pizza.quantity }} × </span>
-          {{ pizza.price }} ₴</span
+          {{ pizza.price }} €</span
         >
       </div>
       <hr />
@@ -121,7 +121,7 @@
               (((cartTotalPrice$ | async) || 0) * discountPercentage) / 100
             )
           }}
-          ₴
+          €
         </span>
       </div>
 

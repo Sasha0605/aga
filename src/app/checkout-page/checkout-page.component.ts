@@ -110,13 +110,13 @@ export class CheckoutPageComponent implements OnInit {
         .post<{ success: boolean }>('/api/order/', orderObject)
         .subscribe(({ success }) => {
           if (success) {
-            alert('Замовлення створено успішно!');
+            alert('Objednávka bola úspešne vytvorená!');
             this.store.dispatch(clearCart());
             this.router.navigate(['/']);
           }
         });
     } else {
-      alert('Заповніть форму!');
+      alert('Vyplňte formulár!');
     }
   }
 

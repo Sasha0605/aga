@@ -106,9 +106,9 @@ export class SelectCityPopupComponent implements OnInit {
 
   generatePizzeriasText(pizzeriasNumber: number): string {
     if (pizzeriasNumber > 10 && pizzeriasNumber < 20) {
-      return `${pizzeriasNumber} піцерій`;
+      return `${pizzeriasNumber} pizzerie`;
     } else {
-      return `${pizzeriasNumber} піцері${
+      return `${pizzeriasNumber} pizzerie${
         this.PIZZERIAS_TEXT_ENDINGS[
           parseInt(
             pizzeriasNumber

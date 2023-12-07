@@ -18,8 +18,8 @@ export class FiltersBlockComponent implements OnInit {
   categoryId$!: Observable<number>;
   sortById$!: Observable<number>;
   isOpenSortingPopup = false;
-  categories = ['Всі', "М'ясні", 'Вегетарианські', 'Гриль', 'Гострі'];
-  sortBy = ['популярності', 'ціні', 'алфавіту'];
+  categories = ['Všetky', "Mäso", 'Vegetariánske', 'Gril', 'Sharp'];
+  sortBy = ['popularita', 'cena', 'abeceda'];
 
   constructor(private store: Store<AppStateInterface>) {}
   ngOnInit(): void {
