@@ -23,8 +23,8 @@ export class CheckoutPageComponent implements OnInit {
   checkOutForm = this.formBuilder.group({
     name: ['', Validators.required],
     phoneNumber: [
-      '+380',
-      [Validators.required, Validators.pattern(/\+380\d{3}\d{2}\d{2}\d{2}/gi)],
+      '+421',
+      [Validators.required, Validators.pattern(/\+421\d{3}\d{2}\d{2}\d{2}/gi)],
     ],
     promoCode: [''],
     paymentMethod: ['credit'],
@@ -74,11 +74,11 @@ export class CheckoutPageComponent implements OnInit {
         .subscribe({
           next: ({ valid, percentage }) => {
             if (!valid) {
-              alert('Такого промокоду не існує!');
+              alert('Takýto promo kód neexistuje!');
             } else {
               this.checkOutForm.controls.promoCode.disable();
               this.discountPercentage = percentage;
-              alert('Промокод успішно використано!');
+              alert('Propagačný kód bol úspešne použitý!');
             }
           },
         });

@@ -29,7 +29,7 @@ export default async function (
     const bodyValidator = zod.object({
       customer: zod.object({
         name: zod.string().nonempty(),
-        phoneNumber: zod.string().regex(/\+380\d{3}\d{2}\d{2}\d{2}/gi),
+        phoneNumber: zod.string().regex(/\+421\d{3}\d{2}\d{2}\d{2}/gi),
       }),
       paymentMethod: zod.string(),
       pizzas: zod.array(

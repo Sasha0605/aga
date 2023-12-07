@@ -27,7 +27,7 @@ export default async function (
 
   const bodyValidator = zod.object({
     name: zod.string().regex(/[А-Яа-яЇїЄє ]/g),
-    phoneNumber: zod.string().regex(/\+380\d{3}\d{2}\d{2}\d{2}/gi),
+    phoneNumber: zod.string().regex(/\+421\d{3}\d{2}\d{2}\d{2}/gi),
     text: zod.string().min(1),
   });
   const body = bodyValidator.parse(request.body);
