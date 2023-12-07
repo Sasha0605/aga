@@ -1,14 +1,14 @@
 <div class="content">
   <div class="container container--cart">
     <div class="cart cart--empty" *ngIf="!(pizzas$ | async)?.length">
-      <h2>Кошик порожній 😕</h2>
+      <h2>Košík je prázdny 😕</h2>
       <p>
-        Швидше за все, ви ще не додали піцу у кошик.<br />
-        Щоб замовити піцу, перейдіть на головну сторінку.
+        S najväčšou pravdepodobnosťou ste si ešte pizzu do košíka nepridali.<br />
+        Ak si chcete objednať pizzu, prejdite na hlavnú stránku.
       </p>
       <img height="300" width="255" src="/assets/icons/empty-cart.png" alt="Порожній кошик" />
       <a routerLink="/" class="button button--black">
-        <span>Повернутись назад</span>
+        <span>Vráťte sa späť</span>
       </a>
     </div>
     <div class="cart" *ngIf="(pizzas$ | async)?.length">
@@ -122,10 +122,10 @@
               />
             </svg>
 
-            <span>Повернутись назад</span>
+            <span>Vráťte sa späť</span>
           </a>
           <a class="button pay-btn" routerLink="/checkout/">
-            <span>Оплатити зараз</span>
+            <span>Zaplaťte teraz</span>
           </a>
         </div>
       </div>

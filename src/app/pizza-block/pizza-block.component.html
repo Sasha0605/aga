@@ -1,5 +1,5 @@
 <article class="pizza-block">
-  <span class="pizza-block__ribbon" *ngIf="pizza.inFuture">Незабаром</span>
+  <span class="pizza-block__ribbon" *ngIf="pizza.inFuture">Už čoskoro</span>
   <img
     class="pizza-block__image"
     src="/assets/images/{{ pizza.imageUrl }}"
@@ -9,7 +9,7 @@
   />
   <h4 class="pizza-block__title">{{ pizza.name }}</h4>
   <div class="pizza-block__bottom">
-    <div class="pizza-block__price">{{ pizza.price }} ₴</div>
+    <div class="pizza-block__price">{{ pizza.price }} €</div>
     <button
       class="button button--outline button--add"
       *ngIf="!pizza.inFuture"
@@ -27,7 +27,7 @@
           fill="white"
         />
       </svg>
-      <span>Додати</span>
+      <span>Pridať</span>
       <i *ngIf="pizzaQuantity | async">{{ pizzaQuantity | async }}</i>
     </button>
   </div>

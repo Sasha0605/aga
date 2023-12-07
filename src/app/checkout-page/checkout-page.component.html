@@ -2,22 +2,22 @@
   <div class="container">
     <form class="checkout_left" [formGroup]="checkOutForm">
       <div class="checkout_login_form">
-        <h2>Замовлення</h2>
+        <h2>Objednávka</h2>
         <label class="form_row">
-          <span class="form_col"> Ім'я </span>
+          <span class="form_col"> Meno </span>
           <input class="form_input" type="text" formControlName="name" />
         </label>
-        <span *ngIf="validateInput('name')" class=""> Некоректне ім'я </span>
+        <span *ngIf="validateInput('name')" class=""> Nesprávne meno </span>
 
         <label class="form_row">
-          <span class="form_col">Номер телефону</span>
+          <span class="form_col">Číslo telefónu</span>
           <input class="form_input" type="tel" formControlName="phoneNumber" />
         </label>
         <span *ngIf="validateInput('phoneNumber')" class="">
-          Некоректний номер телефону</span
+          Nesprávne telefonické číslo</span
         >
         <label class="form_row">
-          <span class="form_col">Адреса піцерії</span>
+          <span class="form_col">Adresa pizzerie</span>
           <input
             class="form_input"
             type="text"
@@ -31,12 +31,12 @@
             class="change_address_button"
             (click)="showPopupSelectOrderType()"
           >
-            Змінити
+            Zmena
           </button>
         </label>
       </div>
       <div class="checkout_promo_form">
-        <h2>Промокод</h2>
+        <h2>Propagačný kód</h2>
         <div class="form_row">
           <input type="text" class="form_input" formControlName="promoCode" />
           <button
@@ -44,12 +44,12 @@
             (click)="checkPromoCode()"
             [disabled]="checkOutForm.controls.promoCode.disabled"
           >
-            Використати
+            Použitie.
           </button>
         </div>
       </div>
       <div class="checkout_payment_form">
-        <h2>Спосіб Оплати</h2>
+        <h2>Spôsob platby</h2>
         <label class="payment_method">
           <input
             type="radio"
@@ -58,7 +58,7 @@
             formControlName="paymentMethod"
             [checked]="checkOutForm.value.paymentMethod === 'credit'"
           />
-          <span>Картою на сайті</span>
+          <span>Zaplaťte okamžite na webovej stránke</span>
         </label>
         <div
           class="card_form"
@@ -69,7 +69,7 @@
           <input
             type="text"
             maxlength="23"
-            placeholder="Номер карти"
+            placeholder="Číslo karty"
             class="card_input"
             formControlName="cardNumber"
           />
@@ -78,7 +78,7 @@
               type="text"
               name=""
               max="5"
-              placeholder="Строк дії"
+              placeholder="Obdobie platnosti"
               class="card_input"
               formControlName="cardExpDate"
             />
@@ -99,12 +99,12 @@
             value="cash"
             formControlName="paymentMethod"
           />
-          <span>Готівкою у піцерії</span>
+          <span>Peniaze v pizzerii</span>
         </label>
       </div>
     </form>
     <div class="checkout_order_details">
-      <h3 class="title">Склад замовлення</h3>
+      <h3 class="title">Zloženie objednávky</h3>
       <div class="order_item" *ngFor="let pizza of pizzas$ | async">
         <span class="name"> {{ pizza.name }} </span>
         <span class="price">
@@ -114,7 +114,7 @@
       </div>
       <hr />
       <div class="order_total" *ngIf="checkOutForm.controls.promoCode.disabled">
-        <span>Знижка</span>
+        <span>Zľava</span>
         <span>
           -{{
             math.round(
@@ -126,7 +126,7 @@
       </div>
 
       <div class="order_total">
-        <span>Сума замовлення</span>
+        <span>Výška objednávky</span>
         <span>
           {{
             math.round(
@@ -134,7 +134,7 @@
                 (((cartTotalPrice$ | async) || 0) * discountPercentage) / 100
             )
           }}
-          ₴</span
+          €</span
         >
       </div>
     </div>
@@ -158,17 +158,17 @@
             stroke-linejoin="round"
           ></path>
         </svg>
-        Назад у кошик
+        Späť do koša
       </a>
       <button class="button" style="font-size: 16px" (click)="createOrder()">
-        Оформити замовлення на суму
+        Uskutočnite objednávku na sumu
         {{
           math.round(
             ((cartTotalPrice$ | async) || 0) -
               (((cartTotalPrice$ | async) || 0) * discountPercentage) / 100
           )
         }}
-        ₴
+        €
       </button>
     </div>
   </div>

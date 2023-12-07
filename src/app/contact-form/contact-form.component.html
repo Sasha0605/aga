@@ -4,10 +4,10 @@
   [formGroup]="contactForm"
   (ngSubmit)="onSubmit()"
 >
-  <h2>Ми чекаємо на ваш вiдгук</h2>
+  <h2>Tešíme sa na vaše správy</h2>
   <div class="contact_form__inputs">
     <label class="contact_form__label">
-      <span> Ім'я </span>
+      <span> Meno </span>
       <input
         type="text"
         class="contact_form__input"
@@ -15,11 +15,11 @@
         [class.contact_form__input--invalid]="validateInput('name')"
       />
       <span *ngIf="validateInput('name')" class="contact_form__error_text">
-        Некоректне ім'я
+        Nesprávne meno
       </span>
     </label>
     <label class="contact_form__label">
-      <span>Номер телефону</span>
+      <span>Číslo telefónu</span>
       <input
         type="tel"
         class="contact_form__input"
@@ -29,18 +29,18 @@
         *ngIf="validateInput('phoneNumber')"
         class="contact_form__error_text"
       >
-        Некоректний номер телефону
+        Nesprávne telefónne číslo
       </span>
     </label>
   </div>
   <label class="contact_form__label">
-    <span>Ваше повідомлення</span>
+    <span>Vaša správa</span>
     <textarea class="contact_form__textarea" formControlName="text"></textarea>
     <span *ngIf="validateInput('text')" class="contact_form__error_text">
-      Повідомлення не може бути порожнім
+      Správa nemôže byť prázdna
     </span>
   </label>
   <button class="button button--cart">
-    <span>Написати</span>
+    <span>Napíšte na adresu.</span>
   </button>
 </form>
